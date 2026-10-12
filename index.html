@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Harsha Vardhan Moddu — Software Engineer</title>
 <meta name="description" content="Harsha Vardhan Moddu — Computer Science and Engineering undergraduate at IIIT Kottayam building full-stack applications in AI/ML, cybersecurity, agricultural technology, and backend systems.">
-<meta name="theme-color" content="#0B0F14">
+<meta name="theme-color" content="#F7FAFF">
 
 <!-- Open Graph -->
 <meta property="og:title" content="Harsha Vardhan Moddu — Software Engineer">
@@ -405,6 +405,61 @@
   ::-webkit-scrollbar-thumb{background:var(--border); border-radius:6px;}
 
   .progress-bar{position:fixed; top:0; left:0; height:2px; background:var(--accent); z-index:150; width:0%; transition:width .1s ease;}
+
+  /* Portfolio refresh: clean blue-and-white dashboard */
+  :root{--bg:#F7FAFF;--bg-elevated:#F1F6FD;--bg-card:#fff;--border:#E5ECF5;--text:#101B31;--text-muted:#586883;--text-faint:#7A879B;--accent:#1266F1;--accent-dim:#0E55C7;--alert:#B77916;--danger:#C83F4B;--accent-rgb:18,102,241;--focus:#155DE0;--radius:18px;--maxw:1360px}
+  html[data-theme="light"]{--bg:#F7FAFF;--bg-elevated:#F1F6FD;--bg-card:#fff;--border:#E5ECF5;--text:#101B31;--text-muted:#586883;--text-faint:#7A879B;--accent:#1266F1;--accent-dim:#0E55C7;--alert:#B77916;--danger:#C83F4B;--accent-rgb:18,102,241;--focus:#155DE0}
+  html[data-theme="dark"]{--bg:#0C1320;--bg-elevated:#111B2A;--bg-card:#152033;--border:#26364D;--text:#F2F6FF;--text-muted:#B1BED1;--text-faint:#8494AA;--accent:#66A3FF;--accent-dim:#347BE5;--alert:#F1BA60;--danger:#F1747D;--accent-rgb:102,163,255;--focus:#8CB7FF}
+  body{background:var(--bg);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+  header.nav{background:rgba(255,255,255,.92);border-color:rgba(225,233,244,.95);box-shadow:0 4px 24px rgba(30,63,110,.035)}
+  html[data-theme="dark"] header.nav{background:rgba(12,19,32,.92)}
+  .nav-inner{max-width:1360px;padding:12px 28px;gap:24px}
+  .logo.brand-mark{gap:11px;font-family:var(--sans);font-size:16px;font-weight:750;color:var(--text);letter-spacing:-.035em}
+  .brand-initials{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:10px;color:#fff;background:linear-gradient(145deg,#227BFF,#0757D8);font-family:var(--display);font-size:17px;font-weight:800;letter-spacing:-.08em;box-shadow:0 5px 13px rgba(18,102,241,.18)}
+  .footer-brand{margin-bottom:8px}
+  .nav-links{gap:clamp(12px,1.7vw,23px)}.nav-links a{color:var(--text-muted);font-weight:550;font-size:13px}.nav-links a:hover,.nav-links a.active{color:var(--accent)}.nav-links a.active::after{background:var(--accent)}
+  .icon-btn{border-radius:50%;width:38px;height:38px}.nav-resume{box-shadow:0 8px 18px rgba(18,102,241,.16)}.nav-resume span{font-size:16px}
+  .btn{border-radius:11px;padding:12px 20px;font-size:14px}.btn-primary{background:var(--accent);color:#fff}.btn-primary:hover{background:var(--accent-dim);color:#fff;box-shadow:0 8px 20px rgba(var(--accent-rgb),.2)}.btn-ghost{border-color:#CAD9EF;background:rgba(255,255,255,.7);color:var(--accent)}
+  html[data-theme="dark"] .btn-ghost{border-color:var(--border);background:var(--bg-card);color:var(--text)}
+  .hero{padding:112px 0 14px;overflow:clip;background:radial-gradient(ellipse at 78% 25%,rgba(57,137,255,.105),transparent 38%),var(--bg)}
+  .hero-grid,.scanline{display:none}.hero-glow{position:absolute;width:560px;height:560px;right:-110px;top:35px;background:radial-gradient(circle,rgba(44,128,255,.13),rgba(44,128,255,0) 68%);pointer-events:none}
+  .hero-content{max-width:1360px;grid-template-columns:minmax(0,1.08fr) minmax(340px,.92fr);gap:36px;align-items:center}
+  .hero-copy{position:relative;z-index:2;padding:12px 0 20px}.hero-eyebrow{display:inline-flex;background:#E8F1FF;border-radius:999px;padding:8px 15px;color:#064DBA;font-family:var(--sans);font-size:12px;letter-spacing:.01em;font-weight:700;margin-bottom:20px}.hero-eyebrow::before{display:none}.eyebrow-separator{padding:0 1px;color:#7AA8F7}
+  .hero-greeting{font-family:var(--display);font-size:clamp(26px,3vw,36px);line-height:1.1;margin:0 0 5px;color:var(--text)}
+  .hero h1{font-size:clamp(38px,4.15vw,60px);line-height:1.05;letter-spacing:-.052em;font-weight:760;margin-bottom:10px;max-width:780px}.hero .hl{color:#1266F1}
+  .hero .tagline{font-family:var(--display);font-size:clamp(19px,2vw,25px);line-height:1.35;font-weight:560;margin:0 0 17px;color:var(--text-muted);letter-spacing:-.02em}.tagline-divider{color:#97A6BD;padding:0 3px}
+  .hero p.lede{color:var(--text-muted);font-size:16px;line-height:1.72;max-width:62ch;margin:0 0 25px}.hero-ctas{margin-bottom:23px;gap:12px}.hero-socials{gap:11px}
+  .social-link{display:flex;width:36px;height:36px;align-items:center;justify-content:center;border-radius:11px;color:var(--text);background:transparent;text-decoration:none;font-size:22px;font-weight:750;transition:transform .2s ease,color .2s ease,background .2s ease}.social-link:hover{color:var(--accent);background:rgba(var(--accent-rgb),.09);transform:translateY(-2px)}.linkedin-social{color:#1271BD;font-size:18px}
+  .hero-visual{position:relative;min-width:0;min-height:390px;display:flex;justify-content:center;align-items:center}
+  .portrait-stage{position:relative;width:min(100%,370px);aspect-ratio:1;display:flex;align-items:center;justify-content:center;isolation:isolate}
+  .portrait-halo{position:absolute;inset:3%;border-radius:50%;background:linear-gradient(140deg,#ECF5FF,#D9EAFE 56%,#F1F7FF);box-shadow:0 0 0 12px rgba(220,237,255,.53),0 28px 70px rgba(70,132,214,.13);z-index:-2}
+  .portrait-orbit{position:absolute;border:1px solid rgba(42,123,238,.19);border-radius:50%;z-index:-1}.orbit-one{inset:-5%;transform:rotate(-18deg) scaleY(.82)}.orbit-two{inset:7% -10%;transform:rotate(32deg) scaleY(.7);border-style:dashed}
+  .profile-photo{width:88%;height:88%;object-fit:cover;object-position:center 28%;border-radius:50%;border:7px solid #fff;box-shadow:0 12px 38px rgba(26,63,117,.16);background:#E6F0FF}
+  .portrait-spark{position:absolute;border-radius:50%;background:#fff;border:5px solid #DCEBFF;box-shadow:0 3px 14px rgba(18,102,241,.18)}.spark-one{width:21px;height:21px;top:11%;right:12%}.spark-two{width:14px;height:14px;bottom:18%;left:2%}
+  .handwritten-note{position:absolute;top:7%;right:-1%;color:#2E4267;font-family:"Segoe Print","Bradley Hand",cursive;font-size:17px;line-height:1.4;transform:rotate(-8deg);text-align:center}.handwritten-note span{display:block;font-family:var(--sans);font-size:34px;margin-top:2px;transform:rotate(-28deg)}
+  .college-card{position:absolute;right:-1%;bottom:1%;width:min(330px,90%);display:grid;grid-template-columns:110px 1fr;align-items:center;gap:12px;padding:13px 15px;border:1px solid rgba(220,231,246,.92);background:rgba(255,255,255,.95);border-radius:16px;box-shadow:0 20px 45px rgba(30,68,123,.1);backdrop-filter:blur(14px)}
+  .college-logo{width:110px;height:72px;object-fit:contain;border-radius:8px;background:#fff}.college-meta{display:flex;flex-direction:column;gap:4px;min-width:0}.college-meta strong{font-family:var(--display);font-size:14px;color:#111D32}.college-meta span{font-size:10.5px;line-height:1.4;color:#66748A}
+  .quick-overview{padding:20px 0 76px;position:relative;z-index:2}.stat-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin-bottom:20px}
+  .stat-card{min-width:0;display:flex;align-items:center;gap:13px;padding:15px 17px;border:1px solid var(--border);border-radius:15px;background:var(--bg-card);box-shadow:0 7px 22px rgba(41,78,128,.035)}
+  .stat-icon,.preview-icon{width:44px;height:44px;flex:0 0 44px;display:flex;align-items:center;justify-content:center;border-radius:13px;background:#EAF2FF;color:#1266F1;font-size:24px;font-weight:650}
+  .stat-trophy{background:#F0EBFF;color:#6B3CF6}.stat-card div{min-width:0;display:flex;flex-direction:column;gap:2px}.stat-card strong{font-family:var(--display);color:var(--text);font-size:19px;line-height:1.2;font-weight:750;letter-spacing:-.03em}.stat-card span:not(.stat-icon){font-size:11.5px;color:var(--text-muted);line-height:1.45}
+  .overview-grid{display:grid;grid-template-columns:1.08fr 1.07fr 1.08fr;gap:15px;align-items:stretch}.preview-card{min-width:0;padding:18px;border:1px solid var(--border);border-radius:17px;background:var(--bg-card);box-shadow:0 9px 30px rgba(41,78,128,.035)}
+  .preview-heading{display:flex;align-items:center;gap:10px;margin-bottom:14px;min-width:0}.preview-icon{width:39px;height:39px;flex-basis:39px;border-radius:12px;font-size:22px}.preview-heading h2{font-family:var(--display);font-size:17px;line-height:1.2;font-weight:730;letter-spacing:-.03em;flex:1}.preview-heading>a{white-space:nowrap;text-decoration:none;font-size:11.5px;color:var(--accent)}.preview-heading>a span{font-size:16px;margin-left:3px}
+  .about-preview>p{font-size:13px;line-height:1.65;color:var(--text-muted);margin:0 0 17px}.detail-list{display:grid;grid-template-columns:1fr 1fr;gap:12px 7px;border-top:1px solid var(--border);padding-top:14px}.detail-list span{min-width:0;font-size:11px;line-height:1.4;color:var(--text-muted);overflow-wrap:anywhere}.detail-list span:last-child{grid-column:1 / -1}
+  .skill-category-tabs{display:flex;flex-wrap:wrap;gap:6px;margin:-1px 0 10px}.skill-category-tabs span{padding:6px 9px;border-radius:8px;background:var(--bg-elevated);color:var(--text-muted);font-size:9.5px}.skill-category-tabs span.active{background:var(--accent);color:#fff}
+  .skill-chip-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}.skill-chip-grid span{display:flex;align-items:center;justify-content:center;min-height:34px;padding:6px 3px;text-align:center;font-size:10px;line-height:1.2;color:var(--text-muted);border:1px solid var(--border);border-radius:10px;background:linear-gradient(180deg,#fff,var(--bg));overflow-wrap:anywhere}
+  .mini-project{display:grid;grid-template-columns:73px minmax(0,1fr);gap:11px;align-items:center;padding:9px;margin-top:8px;color:inherit;text-decoration:none;border:1px solid var(--border);border-radius:13px;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}.mini-project:hover{transform:translateY(-2px);border-color:#BBD3F8;box-shadow:0 8px 18px rgba(25,83,159,.07)}
+  .mini-project-art{display:flex;align-items:center;justify-content:center;width:73px;height:83px;border-radius:10px;font-size:48px;font-weight:500}.shield-art{background:linear-gradient(145deg,#091A35,#102D55);color:#4EA0FF}.space-art{background:radial-gradient(circle at 65% 25%,#347FC8,#0A1B34 70%);color:#8CD7FF}
+  .mini-project-copy{min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:5px}.mini-project-copy strong{display:flex;justify-content:space-between;gap:8px;width:100%;font-family:var(--display);font-size:13.5px;line-height:1.25}.mini-project-copy strong span{color:var(--text-faint)}.mini-project-copy small{color:var(--text-muted);font-size:10.5px;line-height:1.42}.mini-project-copy i{font-size:9.5px;font-style:normal;color:var(--text-faint)}
+  .overview-bottom-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin-top:15px}.mini-info-card{display:flex;align-items:flex-start;gap:12px;min-width:0;padding:16px;border:1px solid var(--border);border-radius:16px;background:var(--bg-card)}.mini-info-card h3{font-size:14px;font-weight:720;margin:0 0 5px}.mini-info-card p{font-size:11.5px;color:var(--text-muted);margin:0 0 7px;line-height:1.45}.mini-info-card a{font-size:10.5px;color:var(--accent);text-decoration:none;font-weight:650}.trophy-preview{color:#6B3CF6;background:#F0EBFF}
+  .achievement-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.achievement-card{display:flex;gap:18px;align-items:flex-start;padding:24px;background:var(--bg-card);border:1px solid var(--border);border-radius:18px;box-shadow:0 8px 25px rgba(41,78,128,.035)}.achievement-emblem{display:flex;flex:0 0 54px;align-items:center;justify-content:center;width:54px;height:54px;border-radius:15px;background:#EAF2FF;color:var(--accent);font-size:27px}.logo-emblem{background:#fff;border:1px solid var(--border);padding:5px}.logo-emblem img{width:100%;height:100%;object-fit:contain}.achievement-kicker{display:block;color:var(--accent);font-family:var(--mono);font-size:10px;letter-spacing:.05em;margin-bottom:5px}.achievement-card h3{font-size:19px;margin-bottom:7px}.achievement-card p{font-size:14px;color:var(--text-muted);line-height:1.6;margin:0}
+  .section{padding:clamp(64px,7vw,96px) 0}.section-head{margin-bottom:36px}.section-head h2{letter-spacing:-.04em}.section-head p{color:var(--text-muted)}
+  .skill-card,.pcard,.repo-card,.contact-link,.edu-card,.phi-card,.gh-panel,.resume-band,.cform{border-radius:16px}.skill-card,.pcard,.repo-card,.contact-link,.edu-card,.gh-panel{box-shadow:0 8px 27px rgba(41,78,128,.035)}.skill-card:hover,.pcard:hover,.repo-card:hover{border-color:rgba(var(--accent-rgb),.5)}.pcard{background:var(--bg-card)}.resume-band{border:1px solid var(--border)}.progress-bar{background:var(--accent)}footer{background:var(--bg-elevated);border-top:1px solid var(--border)}
+  html[data-theme="dark"] .hero-eyebrow{background:#172A45;color:#A9CEFF}html[data-theme="dark"] .portrait-halo{background:linear-gradient(140deg,#182B45,#243B5A 56%,#13223A);box-shadow:0 0 0 12px rgba(48,96,164,.16),0 28px 70px rgba(0,0,0,.16)}html[data-theme="dark"] .profile-photo{border-color:#E7F0FF}html[data-theme="dark"] .handwritten-note{color:#C3D6F4}html[data-theme="dark"] .college-card{background:rgba(21,32,51,.96);border-color:var(--border)}html[data-theme="dark"] .college-meta strong{color:var(--text)}html[data-theme="dark"] .college-meta span{color:var(--text-muted)}html[data-theme="dark"] .stat-icon,html[data-theme="dark"] .preview-icon{background:#1B2C45;color:#82B4FF}html[data-theme="dark"] .stat-trophy,html[data-theme="dark"] .trophy-preview{background:#302448;color:#C4A7FF}html[data-theme="dark"] .skill-chip-grid span{background:var(--bg-elevated)}
+  @media(max-width:1100px){.nav-links{gap:12px}.nav-links a{font-size:12px}.hero-content{gap:22px;grid-template-columns:minmax(0,1.04fr) minmax(300px,.96fr)}.hero h1{font-size:clamp(36px,4.1vw,51px)}.overview-grid{grid-template-columns:1fr 1fr}.projects-preview{grid-column:1 / -1}}
+  @media(max-width:860px){.nav-links{display:none}.hero{padding-top:103px}.hero-content{grid-template-columns:1fr;gap:10px}.hero-copy{padding-bottom:0}.hero-visual{min-height:350px;margin:4px 0 10px}.portrait-stage{width:min(70vw,330px)}.college-card{right:3%;bottom:0}.handwritten-note{right:4%;top:1%}.stat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.overview-grid{grid-template-columns:1fr 1fr}.about-preview{grid-column:1 / -1}.overview-bottom-grid{grid-template-columns:1fr}.achievement-grid{grid-template-columns:1fr}}
+  @media(max-width:560px){.wrap{padding-left:18px;padding-right:18px}.nav-inner{padding:10px 18px;gap:10px}.logo.brand-mark{gap:8px;font-size:13px}.brand-initials{width:31px;height:31px;font-size:15px}.nav-resume{display:none}.nav-right{gap:7px}.hero{padding-top:92px}.hero-eyebrow{font-size:10px;padding:7px 11px}.hero-greeting{font-size:26px}.hero h1{font-size:clamp(36px,10.4vw,48px)}.hero .tagline{font-size:18px}.hero p.lede{font-size:14px}.hero-ctas .btn{padding:11px 14px}.hero-visual{min-height:315px}.portrait-stage{width:min(73vw,290px)}.college-card{right:0;bottom:0;width:min(280px,94%);grid-template-columns:88px 1fr;padding:10px;gap:8px}.college-logo{width:88px;height:60px}.college-meta strong{font-size:13px}.college-meta span{font-size:10px}.handwritten-note{font-size:13px;right:0}.handwritten-note span{font-size:25px}.stat-grid{gap:9px;margin-bottom:14px}.stat-card{gap:9px;padding:12px 10px;border-radius:13px}.stat-icon{width:37px;height:37px;flex-basis:37px;border-radius:11px}.stat-card strong{font-size:16px}.stat-card span:not(.stat-icon){font-size:10px}.overview-grid{grid-template-columns:1fr;gap:12px}.about-preview,.projects-preview{grid-column:auto}.preview-card{padding:16px}.preview-heading{gap:9px}.preview-heading h2{font-size:16px}.preview-heading>a{font-size:11px}.skill-chip-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.detail-list{grid-template-columns:1fr 1fr}.mini-project{grid-template-columns:67px minmax(0,1fr)}.mini-project-art{width:67px;height:76px}.quick-overview{padding-bottom:50px}.section{padding:60px 0}.achievement-card{padding:17px;gap:12px}.achievement-card h3{font-size:17px}}
+
 </style>
 </head>
 <body>
@@ -414,21 +469,21 @@
 <!-- ============ NAV ============ -->
 <header class="nav">
   <div class="nav-inner">
-    <a href="#home" class="logo">harsha<span class="dot">.</span>dev</a>
+    <a href="#home" class="logo brand-mark"><span class="brand-initials">HV</span><span>Harsha Vardhan Moddu</span></a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#home" data-nav>Home</a></li>
       <li><a href="#about" data-nav>About</a></li>
       <li><a href="#skills" data-nav>Skills</a></li>
       <li><a href="#projects" data-nav>Projects</a></li>
       <li><a href="#experience" data-nav>Experience</a></li>
-      <li><a href="#github" data-nav>GitHub</a></li>
+      <li><a href="#achievements" data-nav>Achievements</a></li>
       <li><a href="#contact" data-nav>Contact</a></li>
     </ul>
     <div class="nav-right">
       <button class="icon-btn" id="themeToggle" aria-label="Toggle dark and light theme" title="Toggle theme">
         <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
       </button>
-      <a href="#resume" class="btn btn-ghost btn-sm" style="display:none" id="navResumeBtn">Resume</a>
+      <a href="./resume.html?print=1" target="_blank" rel="noopener" class="btn btn-primary btn-sm nav-resume" id="navResumeBtn">Download Resume <span aria-hidden="true">↓</span></a>
       <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
       </button>
@@ -440,51 +495,83 @@
     <a href="#skills" data-nav>Skills</a>
     <a href="#projects" data-nav>Projects</a>
     <a href="#experience" data-nav>Experience</a>
-    <a href="#github" data-nav>GitHub</a>
+    <a href="#achievements" data-nav>Achievements</a>
     <a href="#contact" data-nav>Contact</a>
   </nav>
 </header>
 
 <!-- ============ HERO ============ -->
 <section class="hero" id="home">
-  <div class="hero-grid"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
   <div class="wrap hero-content">
-    <div>
-      <div class="eyebrow">AVAILABLE FOR SOFTWARE / AI-ML INTERNSHIPS</div>
-      <h1>Harsha Vardhan Moddu</h1>
-      <p class="tagline">Building software that <span class="hl">catches what shouldn't get through.</span></p>
-      <div class="role-line"><span class="prompt">&gt;</span><span id="typeTarget"></span><span class="caret"></span></div>
-      <p class="lede">Third-year Computer Science and Engineering undergraduate at IIIT Kottayam, building full-stack applications across AI/ML, cybersecurity, agricultural technology, and backend systems. Interested in practical software engineering, reliable APIs, and solving real-world problems.</p>
+    <div class="hero-copy">
+      <div class="eyebrow hero-eyebrow">B.TECH CSE <span class="eyebrow-separator">•</span> IIIT KOTTAYAM</div>
+      <p class="hero-greeting">Hi, I’m</p>
+      <h1>Harsha Vardhan <span class="hl">Moddu</span></h1>
+      <p class="tagline">Aspiring Software Engineer <span class="tagline-divider">|</span> AI &amp; Systems Enthusiast</p>
+      <p class="lede">A Computer Science undergraduate at IIIT Kottayam, passionate about building impactful solutions with AI, full-stack development, cybersecurity and reliable backend systems. Always curious, always learning, always building.</p>
       <div class="hero-ctas">
-        <a href="#projects" class="btn btn-primary">View Projects
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-        </a>
-        <button class="btn btn-ghost" id="heroResumeBtn">Check My Resume
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
-        </button>
+        <a href="#projects" class="btn btn-primary">View My Work <span aria-hidden="true">→</span></a>
+        <a href="mailto:harsha20112986@gmail.com" class="btn btn-ghost">✉ &nbsp; Contact Me</a>
       </div>
       <div class="hero-socials">
-        <a class="icon-btn" href="https://github.com/harsha20112986-droid" target="_blank" rel="noopener" aria-label="GitHub profile">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.8 5.4.8 11.7c0 5 3.3 9.3 7.8 10.8.6.1.8-.3.8-.6v-2.1c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11 11 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.5-1.5 7.8-5.8 7.8-10.8C23.2 5.4 18.3.5 12 .5Z"/></svg>
-        </a>
-        <a class="icon-btn" href="https://linkedin.com/in/harsha-vardhan-moddu-14877a3a7/" target="_blank" rel="noopener" aria-label="LinkedIn profile">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.4h-3.5v-5.6c0-1.3 0-3-1.9-3s-2.2 1.4-2.2 2.9v5.7H9.3V9h3.4v1.6h.1c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.2 2.4 4.2 5.5v6.2ZM5.3 7.4a2 2 0 1 1 0-4 2 2 0 0 1 0 4ZM7.1 20.4H3.6V9h3.5v11.4Z"/></svg>
-        </a>
-        <a class="icon-btn" href="mailto:harsha20112986@gmail.com" aria-label="Send email">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
-        </a>
+        <a class="social-link" href="https://github.com/harsha20112986-droid" target="_blank" rel="noopener" aria-label="GitHub profile">◉</a>
+        <a class="social-link linkedin-social" href="https://linkedin.com/in/harsha-vardhan-moddu-14877a3a7/" target="_blank" rel="noopener" aria-label="LinkedIn profile">in</a>
+        <a class="social-link" href="mailto:harsha20112986@gmail.com" aria-label="Send email">✉</a>
       </div>
     </div>
-
-    <div class="terminal" aria-hidden="true">
-      <div class="term-bar">
-        <span class="term-dot t1"></span><span class="term-dot t2"></span><span class="term-dot t3"></span>
-        <span class="term-title">guardian-ai — scan_result.log</span>
+    <div class="hero-visual">
+      <div class="portrait-stage">
+        <div class="portrait-halo"></div><div class="portrait-orbit orbit-one"></div><div class="portrait-orbit orbit-two"></div>
+        <img class="profile-photo" src="./assets/profile.webp" alt="Portrait of Harsha Vardhan Moddu" fetchpriority="high">
+        <span class="portrait-spark spark-one" aria-hidden="true"></span><span class="portrait-spark spark-two" aria-hidden="true"></span>
       </div>
-      <div class="term-body" id="termBody"><!-- filled by JS --></div>
+      <div class="handwritten-note" aria-hidden="true">Turning ideas<br>into impact <span>↙</span></div>
+      <div class="college-card">
+        <img class="college-logo" src="./assets/iiit-kottayam-logo.webp" alt="Indian Institute of Information Technology Kottayam logo">
+        <div class="college-meta"><strong>IIIT Kottayam</strong><span>Indian Institute of Information Technology Kottayam</span><span>B.Tech CSE · 2024–2028</span></div>
+      </div>
     </div>
   </div>
-  <div class="scanline"></div>
+</section>
+
+<section class="quick-overview" aria-label="Portfolio overview">
+  <div class="wrap">
+    <div class="stat-grid">
+      <div class="stat-card"><span class="stat-icon">♧</span><div><strong>3rd Year</strong><span>B.Tech CSE · V Semester</span></div></div>
+      <div class="stat-card"><span class="stat-icon">▥</span><div><strong>6.97</strong><span>Current CGPA / 10</span></div></div>
+      <div class="stat-card"><span class="stat-icon">⌘</span><div><strong>10+</strong><span>Projects &amp; experiments</span></div></div>
+      <div class="stat-card"><span class="stat-icon stat-trophy">♜</span><div><strong>SIH 2026</strong><span>Selected concept · SatQuery AI</span></div></div>
+    </div>
+    <div class="overview-grid">
+      <article class="preview-card about-preview">
+        <div class="preview-heading"><span class="preview-icon">♙</span><h2>About Me</h2><a href="#about">View more <span>→</span></a></div>
+        <p>I’m a third-year Computer Science and Engineering student at IIIT Kottayam. I enjoy building useful software across AI, cybersecurity, full-stack development and systems programming.</p>
+        <div class="detail-list"><span>⌖ &nbsp; Guntur, India</span><span>⌂ &nbsp; IIIT Kottayam</span><span>▣ &nbsp; 2024 – 2028</span><span>✉ &nbsp; harsha20112986@gmail.com</span></div>
+      </article>
+      <article class="preview-card skills-preview">
+        <div class="preview-heading"><span class="preview-icon">⚙</span><h2>Technical Skills</h2><a href="#skills">View more <span>→</span></a></div>
+        <div class="skill-category-tabs"><span class="active">All</span><span>Languages</span><span>Frameworks</span><span>Tools</span></div>
+        <div class="skill-chip-grid"><span>Python</span><span>C++</span><span>Java</span><span>JavaScript</span><span>TypeScript</span><span>React</span><span>Next.js</span><span>FastAPI</span><span>Node.js</span><span>SQL</span><span>Git</span><span>Linux</span><span>OpenMP</span><span>MPI</span><span>OpenCV</span></div>
+      </article>
+      <article class="preview-card projects-preview">
+        <div class="preview-heading"><span class="preview-icon">▣</span><h2>Featured Projects</h2><a href="#projects">View more <span>→</span></a></div>
+        <a class="mini-project" href="https://github.com/harsha20112986-droid/Guardian-AI" target="_blank" rel="noopener">
+          <span class="mini-project-art shield-art"><span>✓</span></span>
+          <span class="mini-project-copy"><strong>Guardian AI <span>↗</span></strong><small>AI-powered cybersecurity for phishing links, scam messages and suspicious QR codes.</small><i>FastAPI · React · ML</i></span>
+        </a>
+        <a class="mini-project" href="#projects">
+          <span class="mini-project-art space-art"><span>✧</span></span>
+          <span class="mini-project-copy"><strong>SatQuery AI <span>→</span></strong><small>Vision-language assistant for multimodal remote-sensing image analysis.</small><i>Python · Deep Learning · LLaVA</i></span>
+        </a>
+      </article>
+    </div>
+    <div class="overview-bottom-grid">
+      <article class="mini-info-card"><span class="preview-icon">▣</span><div><h3>Experience</h3><p>India Post · Temporary engagement</p><a href="#experience">Explore experience →</a></div></article>
+      <article class="mini-info-card"><span class="preview-icon trophy-preview">♜</span><div><h3>Achievements</h3><p>SIH 2026 · SatQuery AI concept</p><a href="#achievements">See milestone →</a></div></article>
+      <article class="mini-info-card"><span class="preview-icon">✉</span><div><h3>Get in Touch</h3><p>Let’s connect and build something useful.</p><a href="#contact">Contact me →</a></div></article>
+    </div>
+  </div>
 </section>
 
 <!-- ============ ABOUT ============ -->
@@ -598,6 +685,17 @@
         <h4>Backend Validation &amp; Testing</h4>
         <p>Collaborated on backend validation and package-level testing, running test suites and investigating integration issues across backend and shared packages.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ACHIEVEMENTS ============ -->
+<section class="section achievements-section" id="achievements">
+  <div class="wrap">
+    <div class="section-head reveal"><div class="eyebrow">ACHIEVEMENTS &amp; RECOGNITION</div><h2>Milestones and things I’m building toward</h2><p>Selected work, academic progress, and hands-on engineering experience.</p></div>
+    <div class="achievement-grid">
+      <article class="achievement-card reveal"><span class="achievement-emblem">♜</span><div><span class="achievement-kicker">SMART INDIA HACKATHON 2026</span><h3>SatQuery AI</h3><p>Selected concept for an interactive vision-language assistant for multimodal remote-sensing image analysis (PS 26167).</p></div></article>
+      <article class="achievement-card reveal"><span class="achievement-emblem logo-emblem"><img src="./assets/iiit-kottayam-logo.webp" alt=""></span><div><span class="achievement-kicker">EDUCATION</span><h3>IIIT Kottayam</h3><p>B.Tech in Computer Science and Engineering · 2024–2028. Currently in the third year, first semester.</p></div></article>
     </div>
   </div>
 </section>
@@ -724,7 +822,7 @@
 <footer>
   <div class="wrap footer-inner">
     <div>
-      <div class="logo" style="margin-bottom:4px;">harsha<span class="dot">.</span>dev</div>
+      <a href="#home" class="logo brand-mark footer-brand"><span class="brand-initials">HV</span><span>Harsha Vardhan Moddu</span></a>
       <div class="fl">Harsha Vardhan Moddu · Software Engineer</div>
     </div>
     <div class="footer-socials">
@@ -771,7 +869,7 @@ function applyTheme(t){
   themeIcon.innerHTML = t === 'dark' ? sunPath : moonPath;
   localStorage.setItem('theme', t);
 }
-applyTheme(localStorage.getItem('theme') || 'dark');
+applyTheme(localStorage.getItem('theme') || 'light');
 document.getElementById('themeToggle').addEventListener('click', ()=>{
   applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
 });
@@ -837,7 +935,7 @@ function typeTermLine(){
 typeTermLine();
 
 /* ============ Scroll spy + progress bar ============ */
-const sections = ['home','about','skills','projects','experience','github','resume','contact'];
+const sections = ['home','about','skills','projects','experience','achievements','github','resume','contact'];
 const navAnchors = document.querySelectorAll('[data-nav]');
 const progressBar = document.getElementById('progressBar');
 function onScroll(){
