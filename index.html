@@ -348,7 +348,7 @@
   .gh-avatar svg{width:32px; height:32px; color:var(--accent);}
   .gh-panel h4{font-size:18px; margin-bottom:4px;}
   .gh-panel .handle{font-family:var(--mono); color:var(--text-faint); font-size:13.5px;}
-  .repo-list{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:24px;}
+  .repo-list{display:grid; grid-template-columns:repeat(auto-fit,minmax(215px,1fr)); gap:14px; margin-top:24px;}
   @media (max-width:760px){.repo-list{grid-template-columns:1fr;}}
   .repo-card{background:var(--bg-card); border:1px solid var(--border); border-radius:10px; padding:18px; text-decoration:none; transition:border-color .2s ease;}
   .repo-card:hover{border-color:rgba(var(--accent-rgb),.45);}
@@ -662,7 +662,7 @@
         <button class="btn btn-primary" id="viewResumeBtn">View Resume
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
         </button>
-        <a class="btn btn-ghost" id="downloadResumeBtn" download="Harsha_Vardhan_Moddu_Resume.pdf">Download PDF
+        <a class="btn btn-ghost" id="downloadResumeBtn" href="./resume.html?print=1" target="_blank" rel="noopener">Print / Save as PDF
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
         </a>
       </div>
@@ -755,7 +755,7 @@
 <script>
 /* ============ Resume (current printable page) ============ */
 const resumeUrl = new URL('./resume.html', window.location.href).href;
-document.getElementById('downloadResumeBtn').href = resumeUrl;
+document.getElementById('downloadResumeBtn').href = resumeUrl + '?print=1';
 function openResume(){ window.open(resumeUrl, '_blank', 'noopener'); }
 document.getElementById('viewResumeBtn').addEventListener('click', openResume);
 document.getElementById('heroResumeBtn').addEventListener('click', openResume);
