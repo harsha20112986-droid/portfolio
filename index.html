@@ -960,7 +960,8 @@ const resumeUrl = new URL('./resume.html', window.location.href).href;
 document.getElementById('downloadResumeBtn').href = resumeUrl + '?print=1';
 function openResume(){ window.open(resumeUrl, '_blank', 'noopener'); }
 document.getElementById('viewResumeBtn').addEventListener('click', openResume);
-document.getElementById('heroResumeBtn').addEventListener('click', openResume);
+const heroResumeBtn = document.getElementById('heroResumeBtn');
+if (heroResumeBtn) heroResumeBtn.addEventListener('click', openResume);
 document.getElementById('resumeVersion').textContent = "Updated October 2026 · Print or save as PDF";
 
 /* ============ Theme toggle ============ *//* ============ Theme toggle ============ */
