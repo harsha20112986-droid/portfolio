@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -469,7 +469,7 @@
     border-radius:190px 0 0 190px;
     background-image:
       linear-gradient(90deg,rgba(247,250,255,.18) 0%,rgba(247,250,255,.12) 55%,rgba(247,250,255,.27) 100%),
-      url("https://tpc.iiitkottayam.ac.in/_next/image?q=75&url=%2F_next%2Fstatic%2Fmedia%2Fiiitk.a2b7e95f.JPEG&w=3840");
+      url("https://tpc.iiitkottayam.ac.in/_next/image?q=75&url=%2F_next%2Fstatic%2Fmedia%2Fiiitk.a2b7e95f.JPEG&w=1920");
     background-size:cover;background-position:center 54%;
     opacity:.56;
     -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 13%,#000 90%,transparent 100%);
@@ -493,7 +493,7 @@
   html[data-theme="dark"] .hero-visual::before{
     background-image:
       linear-gradient(90deg,rgba(12,19,32,.48),rgba(12,19,32,.28)),
-      url("https://tpc.iiitkottayam.ac.in/_next/image?q=75&url=%2F_next%2Fstatic%2Fmedia%2Fiiitk.a2b7e95f.JPEG&w=3840");
+      url("https://tpc.iiitkottayam.ac.in/_next/image?q=75&url=%2F_next%2Fstatic%2Fmedia%2Fiiitk.a2b7e95f.JPEG&w=1920");
     opacity:.30;
   }
   @media(max-width:860px){
@@ -516,11 +516,11 @@
   /* Render static content even if an animation script fails. */
   .reveal,.reveal.in{opacity:1 !important;transform:none !important;}
   .hero-visual::before{
-    background-image:linear-gradient(90deg,rgba(247,250,255,.10) 0%,rgba(247,250,255,.05) 45%,rgba(247,250,255,.20) 100%),url("https://tpc.iiitkottayam.ac.in/_next/image?q=75&url=%2F_next%2Fstatic%2Fmedia%2Fiiitk.a2b7e95f.JPEG&w=3840");
+    background-image:linear-gradient(90deg,rgba(247,250,255,.10) 0%,rgba(247,250,255,.05) 45%,rgba(247,250,255,.20) 100%),url("https://tpc.iiitkottayam.ac.in/_next/image?q=75&url=%2F_next%2Fstatic%2Fmedia%2Fiiitk.a2b7e95f.JPEG&w=1920");
     background-size:cover;background-position:center 52%;
   }
   html[data-theme="dark"] .hero-visual::before{
-    background-image:linear-gradient(90deg,rgba(12,19,32,.44),rgba(12,19,32,.25)),url("https://tpc.iiitkottayam.ac.in/_next/image?q=75&url=%2F_next%2Fstatic%2Fmedia%2Fiiitk.a2b7e95f.JPEG&w=3840");
+    background-image:linear-gradient(90deg,rgba(12,19,32,.44),rgba(12,19,32,.25)),url("https://tpc.iiitkottayam.ac.in/_next/image?q=75&url=%2F_next%2Fstatic%2Fmedia%2Fiiitk.a2b7e95f.JPEG&w=1920");
     background-size:cover;background-position:center 52%;
   }
   .hero-visual{min-height:390px}
@@ -971,10 +971,10 @@ const themeIcon = document.getElementById('themeIcon');
 function applyTheme(t){
   root.setAttribute('data-theme', t);
   if (themeIcon) themeIcon.innerHTML = t === 'dark' ? sunPath : moonPath;
-  try { localStorage.setItem('theme', t); } catch (_) {}
+  try { localStorage.setItem('portfolio-theme-v2', t); } catch (_) {}
 }
 let savedTheme = 'light';
-try { savedTheme = localStorage.getItem('theme') || 'light'; } catch (_) {}
+try { savedTheme = localStorage.getItem('portfolio-theme-v2') || 'light'; } catch (_) {}
 applyTheme(savedTheme);
 document.getElementById('themeToggle').addEventListener('click', ()=>{
   applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
