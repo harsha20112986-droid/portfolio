@@ -3,9 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Harsha Vardhan Moddu — Software Engineer | AI & Systems</title>
-  <meta name="description" content="Harsha Vardhan Moddu — Computer Science undergraduate at IIIT Kottayam building production-grade software in AI/ML, full-stack web, cybersecurity, and distributed systems.">
+  <title>Harsha Vardhan Moddu — Computer Science Undergraduate | Software & AI/ML</title>
+  <meta name="description" content="Harsha Vardhan Moddu is a Computer Science undergraduate at IIIT Kottayam interested in software engineering, full-stack development, AI/ML and cybersecurity. Explore selected projects and open-source contributions.">
   <meta name="theme-color" content="#090d16">
+  <meta name="author" content="Harsha Vardhan Moddu">
+  <link rel="canonical" href="https://harsha20112986-droid.github.io/portfolio/">
+  <meta property="og:image" content="https://harsha20112986-droid.github.io/portfolio/assets/profile.webp">
+  <meta property="og:image:alt" content="Harsha Vardhan Moddu">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Harsha Vardhan Moddu — Software & AI/ML">
+  <meta name="twitter:description" content="Computer Science undergraduate building practical software, full-stack systems and AI/ML projects.">
+  <meta name="twitter:image" content="https://harsha20112986-droid.github.io/portfolio/assets/profile.webp">
 
   <!-- Open Graph / Meta -->
   <meta property="og:title" content="Harsha Vardhan Moddu — Software Engineer">
@@ -24,7 +32,8 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Harsha Vardhan Moddu",
-    "jobTitle": "Software Engineer",
+    "jobTitle": "Computer Science and Engineering Undergraduate",
+    "description": "Computer Science undergraduate interested in software engineering, full-stack development, artificial intelligence and machine learning.",
     "email": "harsha20112986@gmail.com",
     "url": "https://harsha20112986-droid.github.io/portfolio/",
     "sameAs": [
@@ -229,6 +238,11 @@
       position: relative;
       z-index: 1;
     }
+
+    /* Keyboard accessibility and progressive enhancement */
+    .skip-link { position: fixed; top: 12px; left: 12px; z-index: 3000; padding: 10px 14px; border-radius: var(--radius-sm); background: var(--accent); color: #04130d; font-weight: 700; transform: translateY(-160%); transition: transform 0.2s ease; }
+    .skip-link:focus { transform: translateY(0); }
+    :focus-visible { outline: 3px solid var(--cyan); outline-offset: 4px; }
 
     /* Typography */
     h1, h2, h3, h4, h5, h6 {
@@ -1034,6 +1048,7 @@
     }
 
     .project-card {
+      width: 100%; color: var(--text); font: inherit; text-align: left;
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
@@ -1048,7 +1063,7 @@
       box-shadow: var(--shadow-sm);
     }
 
-    .project-card:hover {
+    .project-card:hover, .project-card:focus-visible {
       border-color: var(--border-hover);
       box-shadow: 0 20px 45px -15px rgba(56, 189, 248, 0.2);
       transform: translateY(-5px);
@@ -1258,6 +1273,7 @@
     }
 
     .contact-card-link {
+      width: 100%; font: inherit; color: inherit; text-align: left;
       display: flex;
       align-items: center;
       gap: 16px;
@@ -1297,6 +1313,9 @@
       font-size: 0.84rem;
       color: var(--text-muted);
     }
+
+    .form-note { margin: 0 0 18px; color: var(--text-muted); font-size: 0.82rem; line-height: 1.55; }
+    .form-control[aria-invalid="true"] { border-color: var(--danger); }
 
     /* Contact Form */
     .contact-form-card {
@@ -1354,6 +1373,7 @@
        ============================================================ */
     .modal-overlay {
       position: fixed;
+      visibility: hidden;
       inset: 0;
       background: rgba(4, 7, 12, 0.85);
       backdrop-filter: blur(12px);
@@ -1365,10 +1385,11 @@
       padding: 20px;
       opacity: 0;
       pointer-events: none;
-      transition: opacity 0.3s ease;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
     }
 
     .modal-overlay.open {
+      visibility: visible;
       opacity: 1;
       pointer-events: auto;
     }
@@ -1476,16 +1497,13 @@
       gap: 20px;
     }
 
-    /* Reveal animations on scroll */
-    .reveal-on-scroll {
-      opacity: 0;
-      transform: translateY(25px);
-      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .reveal-on-scroll.revealed {
-      opacity: 1;
-      transform: translateY(0);
+    /* Reveal effects activate only after IntersectionObserver is ready. */
+    html.js-motion .reveal-on-scroll { opacity: 0; transform: translateY(25px); transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+    html.js-motion .reveal-on-scroll.revealed { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
+      #particle-canvas { display: none; }
     }
 
     /* Responsive */
@@ -1505,8 +1523,10 @@
 </head>
 <body>
 
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
   <!-- Ambient Dynamic Canvas Background -->
-  <canvas id="particle-canvas"></canvas>
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
 
   <div class="ambient-glow">
     <div class="glow-orb glow-1"></div>
@@ -1549,7 +1569,7 @@
           </svg>
         </a>
 
-        <button class="icon-btn menu-toggle" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+        <button class="icon-btn menu-toggle" id="mobileMenuBtn" aria-label="Open navigation menu" aria-controls="mobileDrawer" aria-expanded="false">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/>
           </svg>
@@ -1558,7 +1578,7 @@
     </nav>
 
     <!-- Mobile Drawer -->
-    <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer" id="mobileDrawer" aria-label="Mobile navigation" aria-hidden="true">
       <a href="#about" class="mobile-link">About</a>
       <a href="#skills" class="mobile-link">Skills</a>
       <a href="#projects" class="mobile-link">Projects</a>
@@ -1567,7 +1587,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <!-- ============================================================
          HERO SECTION
          ============================================================ -->
@@ -1576,7 +1596,7 @@
         <div class="hero-copy reveal-on-scroll">
           <div class="status-badge">
             <span class="status-dot"></span>
-            <span>Available for SDE &amp; AI/ML Internships · 2026</span>
+            <span>Open to Software Engineering &amp; AI/ML Internships</span>
           </div>
 
           <h1>
@@ -1591,7 +1611,7 @@
           </div>
 
           <p class="hero-description">
-            Computer Science undergraduate at <strong>IIIT Kottayam</strong> building scalable systems across artificial intelligence, cybersecurity, full-stack web platforms, and fault-tolerant backends.
+            Computer Science and Engineering undergraduate at <strong>IIIT Kottayam</strong>, interested in building useful software across full-stack development, backend systems, artificial intelligence, machine learning, and cybersecurity.
           </p>
 
           <div class="hero-actions">
@@ -1708,17 +1728,17 @@
             <div class="card-spotlight"></div>
             <div class="bento-icon icon-amber">🏆</div>
             <div class="stat-number">SIH '26</div>
-            <div class="stat-label">Smart India Hackathon Shortlist</div>
-            <div class="stat-sub">Selected concept for <strong>SatQuery AI</strong> (PS 26167) — Multimodal vision-language assistant for remote-sensing satellite imagery.</div>
+            <div class="stat-label">SatQuery AI · Problem Statement 26167</div>
+            <div class="stat-sub">Developing a multimodal vision-language assistant concept for natural-language analysis of remote-sensing imagery.</div>
           </div>
 
           <!-- Stat 3: Practical Projects -->
           <div class="bento-card bento-col-4 reveal-on-scroll">
             <div class="card-spotlight"></div>
             <div class="bento-icon icon-cyan">⚡</div>
-            <div class="stat-number">10+</div>
-            <div class="stat-label">Engineered Systems</div>
-            <div class="stat-sub">Production web apps, microservices, computer-vision models, and open-source contributions.</div>
+            <div class="stat-number">06</div>
+            <div class="stat-label">Featured Projects</div>
+            <div class="stat-sub">Selected work spanning full-stack applications, AI/ML concepts, cybersecurity, and open-source contributions.</div>
           </div>
 
           <!-- Bento Wide: Engineering Philosophy -->
@@ -1821,9 +1841,9 @@
             <div class="timeline-card">
               <div class="timeline-meta">
                 <span class="timeline-company">INDIA POST · PART-TIME ENGAGEMENT</span>
-                <span class="timeline-period">Temporary Part-time Work</span>
+                <span class="timeline-period">Temporary Engagement</span>
               </div>
-              <h4>Postal Delivery Assistant (Part-time)</h4>
+              <h4>Postal Delivery Assistant (Temporary)</h4>
               <ul>
                 <li>Assisted with day-to-day postal delivery responsibilities during a temporary part-time engagement.</li>
                 <li>Supported timely delivery and customer-facing service in the local community.</li>
@@ -1901,7 +1921,7 @@
             </p>
 
             <div class="contact-info-list">
-              <div class="contact-card-link" id="copyEmailCard">
+              <div class="contact-card-link" id="copyEmailCard" role="button" tabindex="0" aria-label="Copy email address to clipboard">
                 <div class="contact-card-icon">✉️</div>
                 <div class="contact-card-text">
                   <strong>Email Address</strong>
@@ -1928,23 +1948,24 @@
           </div>
 
           <div class="contact-form-card reveal-on-scroll">
+            <p class="form-note" id="contactFormNote">This form opens your email application with the message prepared. It does not send the email automatically.</p>
             <form id="contactForm" novalidate>
               <div class="form-group">
                 <label for="nameInput">Your Name</label>
-                <input type="text" id="nameInput" class="form-control" placeholder="e.g. Alex Smith" required>
-                <div class="form-error" id="nameError"></div>
+                <input type="text" id="nameInput" class="form-control" placeholder="e.g. Alex Smith" autocomplete="name" aria-describedby="nameError" required>
+                <div class="form-error" id="nameError" aria-live="polite"></div>
               </div>
 
               <div class="form-group">
                 <label for="emailInput">Your Email Address</label>
-                <input type="email" id="emailInput" class="form-control" placeholder="alex@company.com" required>
-                <div class="form-error" id="emailError"></div>
+                <input type="email" id="emailInput" class="form-control" placeholder="alex@company.com" autocomplete="email" aria-describedby="emailError" required>
+                <div class="form-error" id="emailError" aria-live="polite"></div>
               </div>
 
               <div class="form-group">
                 <label for="messageInput">Message</label>
-                <textarea id="messageInput" class="form-control" rows="4" placeholder="Let's build something great..." required></textarea>
-                <div class="form-error" id="msgError"></div>
+                <textarea id="messageInput" class="form-control" rows="4" placeholder="Let's build something great..." aria-describedby="msgError" required></textarea>
+                <div class="form-error" id="msgError" aria-live="polite"></div>
               </div>
 
               <button type="submit" class="btn btn-primary" style="width: 100%;">
@@ -1982,8 +2003,8 @@
   <!-- ============================================================
        PROJECT CASE STUDY MODAL
        ============================================================ -->
-  <div class="modal-overlay" id="projectModalOverlay" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="modal-dialog">
+  <div class="modal-overlay" id="projectModalOverlay" aria-hidden="true">
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle" tabindex="-1">
       <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close dialog">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
@@ -1995,7 +2016,7 @@
   </div>
 
   <!-- Toast Notification element -->
-  <div class="toast-notification" id="toastNotice">
+  <div class="toast-notification" id="toastNotice" role="status" aria-live="polite">
     <span>Email copied to clipboard!</span>
   </div>
 
@@ -2003,20 +2024,23 @@
        SCRIPTS: ANIMATIONS, CANVAS, TERMINAL & INTERACTIONS
        ============================================================ -->
   <script>
+    const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
     /* ============================================================
        1. INTERACTIVE PARTICLE CANVAS
        ============================================================ */
     const canvas = document.getElementById('particle-canvas');
     const ctx = canvas.getContext('2d');
     let particles = [];
+    let particleFrame = 0;
     let mouse = { x: null, y: null, radius: 140 };
 
     function resizeCanvas() {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
       initParticles();
+      syncParticleAnimation();
     }
-    window.addEventListener('resize', resizeCanvas);
+    window.addEventListener('resize', resizeCanvas, { passive: true });
 
     class Particle {
       constructor() {
@@ -2056,7 +2080,8 @@
 
     function initParticles() {
       particles = [];
-      const count = Math.min(Math.floor((canvas.width * canvas.height) / 18000), 70);
+      const deviceCap = window.innerWidth < 768 ? 24 : 55;
+      const count = Math.min(Math.floor((canvas.width * canvas.height) / 22000), deviceCap);
       for (let i = 0; i < count; i++) {
         particles.push(new Particle());
       }
@@ -2081,10 +2106,18 @@
           }
         }
       }
-      requestAnimationFrame(animateParticles);
+      if (!document.hidden && !motionPreference.matches) particleFrame = requestAnimationFrame(animateParticles);
+      else particleFrame = 0;
+    }
+    function syncParticleAnimation() {
+      if (particleFrame) cancelAnimationFrame(particleFrame);
+      particleFrame = 0;
+      if (!document.hidden && !motionPreference.matches) animateParticles();
+      else ctx.clearRect(0, 0, canvas.width, canvas.height);
     }
     resizeCanvas();
-    animateParticles();
+    document.addEventListener('visibilitychange', syncParticleAnimation);
+    motionPreference.addEventListener?.('change', syncParticleAnimation);
 
     window.addEventListener('mousemove', (e) => {
       mouse.x = e.clientX;
@@ -2110,7 +2143,7 @@
     const typewriterEl = document.getElementById('typewriterTarget');
 
     function typeWriterTick() {
-      if (!typewriterEl) return;
+      if (!typewriterEl || motionPreference.matches) return;
       const currentRole = roles[roleIndex];
       if (!isDeleting) {
         charIndex++;
@@ -2133,7 +2166,8 @@
         setTimeout(typeWriterTick, 35);
       }
     }
-    typeWriterTick();
+    if (motionPreference.matches) typewriterEl.textContent = roles[0];
+    else typeWriterTick();
 
     /* ============================================================
        3. INTERACTIVE TERMINAL WIDGET
@@ -2204,6 +2238,18 @@
       { name: 'Vite', cat: 'systems', level: 'Proficient' }
     ];
 
+    const revealObserver = 'IntersectionObserver' in window && !motionPreference.matches
+      ? new IntersectionObserver((entries, observer) => entries.forEach((entry) => {
+          if (entry.isIntersecting) { entry.target.classList.add('revealed'); observer.unobserve(entry.target); }
+        }), { rootMargin: '0px 0px -8% 0px', threshold: 0.05 })
+      : null;
+    function observeRevealElements(scope = document) {
+      scope.querySelectorAll('.reveal-on-scroll:not([data-reveal-observed])').forEach((element) => {
+        element.dataset.revealObserved = 'true';
+        if (revealObserver) revealObserver.observe(element); else element.classList.add('revealed');
+      });
+    }
+    if (revealObserver) document.documentElement.classList.add('js-motion');
     const skillsGrid = document.getElementById('skillsGridContainer');
     function renderSkills(category = 'all') {
       skillsGrid.innerHTML = '';
@@ -2220,6 +2266,7 @@
         `;
         skillsGrid.appendChild(item);
       });
+      observeRevealElements(skillsGrid);
     }
     renderSkills();
 
@@ -2240,16 +2287,16 @@
         title: 'Guardian AI',
         cat: 'ai',
         role: 'Creator & Lead Developer',
-        desc: 'Production-ready AI cybersecurity platform detecting malicious phishing URLs, scam SMS content, and counterfeit QR codes with explainable risk scores.',
+        desc: 'AI-assisted cybersecurity application for analysing phishing URLs, scam SMS messages and QR-code links through machine-learning predictions and rule-based risk scoring.',
         tags: ['FastAPI', 'React', 'Machine Learning', 'OpenCV', 'SQLAlchemy'],
         github: 'https://github.com/harsha20112986-droid/Guardian-AI',
         body: {
           problem: 'End-users routinely fall victim to zero-day phishing links and deceptive QR codes where traditional blocklists fail.',
           solution: 'Guardian AI merges heuristic URL lexical feature analysis, NLP text classification, and QR payload decoding to compute a unified 0-100 risk score accompanied by explainable indicators.',
           highlights: [
-            'Built real-time URL heuristic feature extraction engine with domain age and lexical entropy analysis.',
-            'Integrated OCR and computer-vision QR scanner to inspect embedded redirects before navigation.',
-            'Hardened FastAPI backend with rate limiting, JWT authentication, and structured audit logs.'
+            'Implemented URL feature extraction and rule-based indicators alongside machine-learning predictions.',
+            'Integrated OpenCV QR-code decoding and routed extracted links through the URL analysis workflow.',
+            'Added authenticated user workflows, role-based access controls and scan-history features.'
           ]
         }
       },
@@ -2258,16 +2305,16 @@
         title: 'RythuSetu',
         cat: 'fullstack',
         role: 'Full-Stack Architecture',
-        desc: 'Comprehensive agricultural intelligence platform providing real-time crop market prices, weather hazard warnings, seed batch validation, and claim automation.',
+        desc: 'Farmer-support platform bringing together agricultural market-price references, weather information, seed verification, claim-preparation assistance and practical farm-service workflows.',
         tags: ['FastAPI', 'React', 'TypeScript', 'PostgreSQL', 'JWT', 'Pytest'],
         github: 'https://github.com/harsha20112986-droid/RythuSetu',
         body: {
           problem: 'Smallholder farmers face severe information asymmetry regarding commodity pricing, crop-loss compensation, and seed certification.',
-          solution: 'RythuSetu centralizes live APMC market feeds, localized meteorological warnings, and an automated guided workflow for filing crop damage insurance claims.',
+          solution: 'RythuSetu organizes agricultural information and guided workflows in one application, with transparent data provenance and server-side controls for user roles and records.',
           highlights: [
-            'Engineered RESTful architecture backed by PostgreSQL with role-based access for farmers, officers, and vendors.',
-            'Implemented automated claim form compilation with geotagged photo attachments and loss calculators.',
-            'Covered backend workflows with automated Pytest suites guaranteeing high reliability.'
+            'Worked on a FastAPI and React application backed by a relational data model and server-side role-based access control.',
+            'Implemented claim-preparation workflows with supporting records and an auditable event trail.',
+            'Organized market-price, weather, storage and machinery workflows with visible data-provenance labels.'
           ]
         }
       },
@@ -2275,16 +2322,16 @@
         id: 'satquery-ai',
         title: 'SatQuery AI',
         cat: 'ai',
-        role: 'Smart India Hackathon 2026',
-        desc: 'Vision-language foundation assistant for conversational analysis of multimodal satellite and remote-sensing aerial imagery (Problem PS 26167).',
-        tags: ['Deep Learning', 'Vision-Language', 'Python', 'LLaVA', 'GeoTIFF'],
-        github: 'https://github.com/harsha20112986-droid',
+        role: 'SIH 2026 · Problem Statement 26167',
+        desc: 'A project concept for a vision-language assistant that lets users explore remote-sensing imagery through natural-language queries and evidence-grounded visual analysis.',
+        tags: ['Python', 'Vision-Language Models', 'Remote Sensing', 'Multimodal AI'],
+        github: null,
         body: {
-          problem: 'Analyzing high-resolution satellite imagery typically requires proprietary GIS tools and specialized spatial analyst expertise.',
-          solution: 'SatQuery AI enables users to ask natural-language questions over multi-spectral geospatial maps to pinpoint land use changes, waterbody depletion, and urban expansion.',
+          problem: 'Interpreting optical, multispectral and SAR imagery often requires specialist tools and remote-sensing expertise.',
+          solution: 'The proposed workflow routes a user query and supplied imagery to suitable specialist models, then combines their outputs into an evidence-grounded response.',
           highlights: [
-            'Shortlisted concept for Smart India Hackathon 2026.',
-            'Multimodal grounding architecture linking spatial bounding boxes directly to conversational responses.'
+            'Defined use cases covering image question answering, captioning, visual grounding and bi-temporal change analysis.',
+            'Explored an agentic workflow for coordinating optical, multispectral and SAR analysis tools.'
           ]
         }
       },
@@ -2300,8 +2347,8 @@
           problem: 'Cascading line trips in electrical transmission grids can trigger catastrophic blackout events within seconds.',
           solution: 'Combines dynamic power flow simulation on IEEE 14-bus test systems with deep RL agents trained to perform corrective line switching before thermal limits breach.',
           highlights: [
-            'Assisted in simulation and mitigation benchmarks against conventional N-1 contingency protocols.',
-            'Validated reinforcement learning reward formulations for voltage stability preservation.'
+            'Contributed to simulation workflows involving IEEE 14-bus power-grid test networks.',
+            'Assisted with evaluation of reinforcement-learning mitigation approaches against baseline strategies.'
           ]
         }
       },
@@ -2313,12 +2360,13 @@
         desc: 'Computer-vision pipeline integrated into an automated interview evaluation system to gauge candidate engagement, posture, and integrity.',
         tags: ['MediaPipe', 'OpenCV', 'Python', 'FastAPI', 'Gemini AI'],
         github: 'https://github.com/GaneshKotakonda/ai-interview-evaluation-sysytem',
+        contribution: 'https://github.com/GaneshKotakonda/ai-interview-evaluation-sysytem/pull/1',
         body: {
           problem: 'Automated video interviews lack objective behavioral telemetry regarding eye contact consistency and secondary participant presence.',
           solution: 'Delivered an integrated computer-vision service processing video frames in real-time to compute gaze vectors, head pose roll/pitch/yaw, and multi-face alarms.',
           highlights: [
-            'Authored and merged Pull Request #1 providing real-time MediaPipe facial landmark analysis.',
-            'Quantified metrics for eye contact approximation and gaze deviation timers with zero latency overhead.'
+            'Contributed merged Pull Request #1, adding a MediaPipe-based facial-landmark analysis component.',
+            'Added observable video-signal estimates for face presence, gaze direction, head alignment and multiple-face detection.'
           ]
         }
       },
@@ -2349,6 +2397,9 @@
       list.forEach((p, index) => {
         const card = document.createElement('div');
         card.className = 'project-card reveal-on-scroll';
+        card.setAttribute('role', 'button'); card.tabIndex = 0;
+        card.setAttribute('aria-haspopup', 'dialog');
+        card.setAttribute('aria-label', `Open ${p.title} project case study`);
         card.innerHTML = `
           <div>
             <div class="project-card-header">
@@ -2395,8 +2446,12 @@
         });
 
         card.addEventListener('click', () => openProjectModal(p));
+        card.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openProjectModal(p); }
+        });
         projectsContainer.appendChild(card);
       });
+      observeRevealElements(projectsContainer);
     }
     renderProjects();
 
@@ -2414,13 +2469,15 @@
     const modalOverlay = document.getElementById('projectModalOverlay');
     const modalContent = document.getElementById('modalContentBody');
     const modalCloseBtn = document.getElementById('modalCloseBtn');
-
+    const modalDialog = modalOverlay.querySelector('.modal-dialog');
+    let modalReturnFocus = null;
     function openProjectModal(p) {
+      modalReturnFocus = document.activeElement;
       modalContent.innerHTML = `
         <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
           <span class="project-index-pill">${p.role}</span>
         </div>
-        <h2 style="font-size: 1.85rem; margin-bottom: 14px;">${p.title}</h2>
+        <h2 id="projectModalTitle" style="font-size: 1.85rem; margin-bottom: 14px;">${p.title}</h2>
         <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.6;">${p.desc}</p>
 
         <h4>Problem &amp; Context</h4>
@@ -2440,20 +2497,30 @@
         </div>
 
         <div class="modal-actions">
-          <a href="${p.github}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
-            <span>View Repository on GitHub</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
-          </a>
+          ${p.github ? `<a href="${p.github}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm"><span>View Repository on GitHub</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></a>` : '<span class="project-role-chip">Project repository not yet published</span>'}
+          ${p.contribution ? `<a href="${p.contribution}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm"><span>View Merged Contribution</span></a>` : ''}
         </div>
       `;
       modalOverlay.classList.add('open');
+      modalOverlay.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
+      modalCloseBtn.focus();
     }
-
     function closeModal() {
+      if (!modalOverlay.classList.contains('open')) return;
       modalOverlay.classList.remove('open');
+      modalOverlay.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
+      if (modalReturnFocus instanceof HTMLElement) modalReturnFocus.focus();
     }
+    modalDialog.addEventListener('keydown', (event) => {
+      if (event.key !== 'Tab') return;
+      const focusable = [...modalDialog.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])')].filter((element) => element.offsetParent !== null);
+      if (!focusable.length) { event.preventDefault(); modalDialog.focus(); return; }
+      const first = focusable[0], last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+    });
 
     modalCloseBtn.addEventListener('click', closeModal);
     modalOverlay.addEventListener('click', (e) => {
@@ -2477,10 +2544,11 @@
       } else {
         themeIcon.innerHTML = `<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/>`;
       }
-      localStorage.setItem('hv_portfolio_theme', theme);
+      try { localStorage.setItem('hv_portfolio_theme', theme); } catch (error) { /* Keep theme active for this visit if storage is blocked. */ }
     }
 
-    const savedTheme = localStorage.getItem('hv_portfolio_theme') || 'dark';
+    let savedTheme = 'dark';
+    try { savedTheme = localStorage.getItem('hv_portfolio_theme') || 'dark'; } catch (error) { /* Use default theme if storage is blocked. */ }
     applyTheme(savedTheme);
 
     themeToggleBtn.addEventListener('click', () => {
@@ -2492,22 +2560,15 @@
        8. SCROLL PROGRESS & REVEALS
        ============================================================ */
     const progressBar = document.getElementById('progressBar');
-    const reveals = document.querySelectorAll('.reveal-on-scroll');
-
+    observeRevealElements();
     function handleScroll() {
       const winScroll = document.documentElement.scrollTop;
       const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = (winScroll / height) * 100;
+      const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
       progressBar.style.width = scrolled + '%';
-
-      reveals.forEach(el => {
-        const top = el.getBoundingClientRect().top;
-        if (top < window.innerHeight * 0.88) {
-          el.classList.add('revealed');
-        }
-      });
     }
     window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll, { passive: true });
     handleScroll();
 
     /* ============================================================
@@ -2522,17 +2583,19 @@
 
     function copyEmailToClipboard() {
       const email = 'harsha20112986@gmail.com';
-      if (navigator.clipboard) {
-        navigator.clipboard.writeText(email).then(() => {
-          showToast('Copied: ' + email);
-        });
-      } else {
-        window.location.href = 'mailto:' + email;
-      }
+      if (navigator.clipboard?.writeText) {
+        navigator.clipboard.writeText(email)
+          .then(() => showToast('Email address copied.'))
+          .catch(() => showToast('Copy unavailable. Please email harsha20112986@gmail.com.'));
+      } else showToast('Copy unavailable. Please email harsha20112986@gmail.com.');
     }
 
     document.getElementById('heroCopyEmailBtn').addEventListener('click', copyEmailToClipboard);
-    document.getElementById('copyEmailCard').addEventListener('click', copyEmailToClipboard);
+    const copyEmailCard = document.getElementById('copyEmailCard');
+    copyEmailCard.addEventListener('click', copyEmailToClipboard);
+    copyEmailCard.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); copyEmailToClipboard(); }
+    });
 
     /* ============================================================
        10. CONTACT FORM
@@ -2547,18 +2610,23 @@
       document.getElementById('nameError').textContent = '';
       document.getElementById('emailError').textContent = '';
       document.getElementById('msgError').textContent = '';
+      ['nameInput', 'emailInput', 'messageInput'].forEach((id) => document.getElementById(id).removeAttribute('aria-invalid'));
 
       let valid = true;
       if (!name) {
         document.getElementById('nameError').textContent = 'Please enter your name.';
+        document.getElementById('nameInput').setAttribute('aria-invalid', 'true');
         valid = false;
       }
-      if (!email || !email.includes('@')) {
+      const emailIsValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      if (!emailIsValid) {
         document.getElementById('emailError').textContent = 'Please enter a valid email address.';
+        document.getElementById('emailInput').setAttribute('aria-invalid', 'true');
         valid = false;
       }
       if (msg.length < 8) {
         document.getElementById('msgError').textContent = 'Message should be at least 8 characters.';
+        document.getElementById('messageInput').setAttribute('aria-invalid', 'true');
         valid = false;
       }
 
@@ -2578,13 +2646,16 @@
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mobileDrawer = document.getElementById('mobileDrawer');
     if (mobileMenuBtn && mobileDrawer) {
-      mobileMenuBtn.addEventListener('click', () => {
-        mobileDrawer.classList.toggle('open');
-      });
-      document.querySelectorAll('.mobile-link').forEach(link => {
-        link.addEventListener('click', () => {
-          mobileDrawer.classList.remove('open');
-        });
+      function setMobileMenuOpen(isOpen) {
+        mobileDrawer.classList.toggle('open', isOpen);
+        mobileDrawer.setAttribute('aria-hidden', String(!isOpen));
+        mobileMenuBtn.setAttribute('aria-expanded', String(isOpen));
+        mobileMenuBtn.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+      }
+      mobileMenuBtn.addEventListener('click', () => setMobileMenuOpen(!mobileDrawer.classList.contains('open')));
+      document.querySelectorAll('.mobile-link').forEach(link => link.addEventListener('click', () => setMobileMenuOpen(false)));
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && mobileDrawer.classList.contains('open')) { setMobileMenuOpen(false); mobileMenuBtn.focus(); }
       });
     }
   </script>
