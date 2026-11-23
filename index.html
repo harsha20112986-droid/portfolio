@@ -1578,7 +1578,7 @@
     </nav>
 
     <!-- Mobile Drawer -->
-    <div class="mobile-drawer" id="mobileDrawer" aria-label="Mobile navigation" aria-hidden="true">
+    <nav class="mobile-drawer" id="mobileDrawer" aria-label="Mobile navigation" aria-hidden="true">
       <a href="#about" class="mobile-link">About</a>
       <a href="#skills" class="mobile-link">Skills</a>
       <a href="#projects" class="mobile-link">Projects</a>
@@ -1949,7 +1949,7 @@
 
           <div class="contact-form-card reveal-on-scroll">
             <p class="form-note" id="contactFormNote">This form opens your email application with the message prepared. It does not send the email automatically.</p>
-            <form id="contactForm" novalidate>
+            <form id="contactForm" novalidate aria-describedby="contactFormNote">
               <div class="form-group">
                 <label for="nameInput">Your Name</label>
                 <input type="text" id="nameInput" class="form-control" placeholder="e.g. Alex Smith" autocomplete="name" aria-describedby="nameError" required>
