@@ -16,7 +16,7 @@
   <meta name="twitter:image" content="https://harsha20112986-droid.github.io/portfolio/assets/profile.webp">
 
   <!-- Open Graph / Meta -->
-  <meta property="og:title" content="Harsha Vardhan Moddu — Software Engineer">
+  <meta property="og:title" content="Harsha Vardhan Moddu — Computer Science Undergraduate | Software & AI/ML">
   <meta property="og:description" content="CS undergraduate building intelligent systems, full-stack platforms, and reliable software.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://harsha20112986-droid.github.io/portfolio/">
@@ -58,7 +58,7 @@
 
       --text: #f1f5f9;
       --text-muted: #94a3b8;
-      --text-faint: #64748b;
+      --text-faint: #7c8da6;
 
       --accent: #10b981;
       --accent-glow: rgba(16, 185, 129, 0.25);
@@ -94,22 +94,25 @@
       --bg-card: rgba(255, 255, 255, 0.85);
       --bg-card-hover: #ffffff;
       --border: rgba(15, 23, 42, 0.08);
-      --border-hover: rgba(2, 132, 199, 0.4);
-      --border-accent: rgba(5, 150, 105, 0.4);
+      --border-hover: rgba(3, 105, 161, 0.4);
+      --border-accent: rgba(4, 120, 87, 0.4);
 
       --text: #0f172a;
       --text-muted: #475569;
-      --text-faint: #94a3b8;
+      --text-faint: #526277;
 
-      --accent: #059669;
-      --accent-glow: rgba(5, 150, 105, 0.15);
-      --accent-rgb: 5, 150, 105;
+      --accent: #047857;
+      --accent-glow: rgba(4, 120, 87, 0.15);
+      --accent-rgb: 4, 120, 87;
 
-      --cyan: #0284c7;
-      --cyan-glow: rgba(2, 132, 199, 0.15);
+      --cyan: #0369a1;
+      --cyan-glow: rgba(3, 105, 161, 0.15);
 
-      --purple: #6366f1;
-      --purple-glow: rgba(99, 102, 241, 0.15);
+      --purple: #4f46e5;
+      --purple-glow: rgba(79, 70, 229, 0.15);
+
+      --amber: #92400e;
+      --danger: #be123c;
 
       --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.04);
       --shadow-lg: 0 20px 35px -10px rgba(0, 0, 0, 0.08);
@@ -146,6 +149,10 @@
     ::selection {
       background: var(--accent);
       color: #000;
+    }
+
+    html[data-theme="light"] ::selection {
+      color: #fff;
     }
 
     a {
@@ -472,6 +479,12 @@
       transform: translateY(-2px);
       box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
       color: #000;
+    }
+
+    html[data-theme="light"] .btn-primary,
+    html[data-theme="light"] .btn-primary:hover {
+      background: linear-gradient(135deg, #047857 0%, #065f46 100%);
+      color: #fff;
     }
 
     .btn-secondary {
@@ -1578,13 +1591,13 @@
     </nav>
 
     <!-- Mobile Drawer -->
-    <div class="mobile-drawer" id="mobileDrawer" aria-label="Mobile navigation" aria-hidden="true">
+    <nav class="mobile-drawer" id="mobileDrawer" aria-label="Mobile navigation" aria-hidden="true">
       <a href="#about" class="mobile-link">About</a>
       <a href="#skills" class="mobile-link">Skills</a>
       <a href="#projects" class="mobile-link">Projects</a>
       <a href="#experience" class="mobile-link">Experience</a>
       <a href="#contact" class="mobile-link">Contact</a>
-    </div>
+    </nav>
   </header>
 
   <main id="main-content">
@@ -1949,7 +1962,7 @@
 
           <div class="contact-form-card reveal-on-scroll">
             <p class="form-note" id="contactFormNote">This form opens your email application with the message prepared. It does not send the email automatically.</p>
-            <form id="contactForm" novalidate>
+            <form id="contactForm" novalidate aria-describedby="contactFormNote">
               <div class="form-group">
                 <label for="nameInput">Your Name</label>
                 <input type="text" id="nameInput" class="form-control" placeholder="e.g. Alex Smith" autocomplete="name" aria-describedby="nameError" required>
